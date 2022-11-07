@@ -14,7 +14,7 @@ Build a replica Trello task board. This assessment is meant to take **2-3 hours*
 
 - Build this ontop of the NextJS framework. This uses React as it's main component Library.
 - It is not required to use Typescript but would be excellent if you do.
-- Clone, not fork, this repo and identify your final branch for submittal.
+- Fork this repo and identify your final branch for submittal.
 - Implement using pure CSS (no CSS frameworks or libraries).
 - Do not use a drag & drop JS library (i.e. react-draggable).
 - Persist the boards lists and tasks.
