@@ -1,11 +1,13 @@
 # Trello Clone
 
-Build a replica Trello task board. This assessment is meant to take **2-3 hours**. If you have any diffiuclties, note down any assumed approaches and continue moving forward to the best of your ability.
+Build a replica Trello task board. This assessment is meant to take **2-3 hours**. If you have any difficulties, note down any assumed approaches and continue moving forward to the best of your ability.
 
 ## **Functional Requirements**
 
-- Users can add a new list (multiple) by clicking “Add another list”. By clicking “Add list”, the list will be persisted.
-- Users can add a new card (multiple) inside a list by clicking “Add a card”. By clicking “Add card”, the card will be persisted.
+- Users can add a new list (multiple) by clicking “Add another list”. 
+  - By clicking “Add list”, the list will be persisted.
+- Users can add a new card (multiple) inside a list by clicking “Add a card”. 
+  - By clicking “Add card”, the card will be persisted.
 - Users can cancel adding a new list or card by clicking an “X” button or by clicking out of the editting box.
 - Users can drag any card to any column and reorder cards within the column.
 - The lists should scroll horizontally for tablet and mobile screens (Mobile View).
@@ -14,7 +16,7 @@ Build a replica Trello task board. This assessment is meant to take **2-3 hours*
 
 - Build this ontop of the NextJS framework. This uses React as it's main component Library.
 - It is not required to use Typescript but would be excellent if you do.
-- Fork this repo and identify your final branch for submittal.
+- Clone this repo and identify your final branch for submittal.
 - Implement using pure CSS (no CSS frameworks or libraries).
 - Do not use a drag & drop JS library (i.e. react-draggable).
 - Persist the boards lists and tasks.
