@@ -4,6 +4,9 @@
   height: 90%;
   width: 25%;
   margin-right: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .listTitle {

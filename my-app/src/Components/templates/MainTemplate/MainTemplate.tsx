@@ -18,12 +18,19 @@ export function MainTemplate() {
   return (
     <div className={styles.mainContainer}>
       <div className={styles.innerMainContainer}>
-        {board?.map(function (list: string[]) {
+        {board?.map(function (list: string[], index: number) {
           const title = list[0];
           console.log(title);
           if (title != "") {
             const cards = list.slice(1);
-            return <List key={title} title={title} cards={cards}></List>;
+            return (
+              <List
+                cardKey={index}
+                key={title}
+                title={title}
+                cards={cards}
+              ></List>
+            );
           } else {
             return null;
           }

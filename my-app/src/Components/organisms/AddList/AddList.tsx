@@ -29,6 +29,7 @@ export function AddList() {
       window.localStorage.setItem("board", JSON.stringify(currentBoard));
     }
     dispatch(setNewListName({ newListName: "" }));
+    dispatch(setCreatingList({ isCreatingList: false }));
   };
 
   const closeClick = () => {
@@ -43,7 +44,7 @@ export function AddList() {
     <div className={styles.addListCard}>
       {creatingList ? (
         <div>
-          <Field defaultText="Enter List Title" />
+          <Field defaultText="Enter List Title" dispatchFunction="newList" />
           <AddComponent
             string="Add List"
             clickButton={buttonClick}

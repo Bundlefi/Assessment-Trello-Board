@@ -6,10 +6,11 @@ import styles from "./list.module.css";
 interface Props {
   title: string;
   cards: string[];
+  cardKey: number;
 }
 
 export function List(props: Props) {
-  const { title, cards } = props;
+  const { title, cards, cardKey } = props;
 
   return (
     <div className={styles.list}>
@@ -18,7 +19,7 @@ export function List(props: Props) {
       {cards.map((card) => (
         <Card key={card} title={card} />
       ))}
-      <AddCard></AddCard>
+      <AddCard cardKey={cardKey}></AddCard>
     </div>
   );
 }

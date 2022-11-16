@@ -6,42 +6,50 @@ import {
   setCreatingCard,
   getNewCardName,
   setCardNewName,
+  setBoard,
 } from "../../../../Redux";
 import styles from "./addCard.module.css";
+import { useState } from "react";
 
-export function AddCard() {
+interface Props {
+  cardKey: number;
+}
+
+export function AddCard(props: Props) {
+  const { cardKey } = props;
   const creatingList = useSelector(isCreatingCard);
 
+  const [creatingCard, setCreatingCard] = useState(false);
+
   const dispatch = useDispatch();
-  const newListName = useSelector(getNewCardName);
+  const newCardName = useSelector(getNewCardName);
+
   const buttonClick = () => {
-    if (newListName != "") {
+    if (newCardName != "") {
       const currentBoard = JSON.parse(
         window.localStorage.getItem("board") || "[[]]"
       );
-      if (currentBoard.length == 1) {
-        currentBoard[0] = [`${newListName}`];
-      } else {
-        currentBoard.push([`${newListName}`]);
-      }
+      currentBoard[cardKey].push(newCardName);
       window.localStorage.setItem("board", JSON.stringify(currentBoard));
+      dispatch(setBoard({ board: currentBoard }));
     }
     dispatch(setCardNewName({ newCardName: "" }));
+    setCreatingCard(false);
   };
 
   const closeClick = () => {
-    dispatch(setCreatingCard({ isCreatingCard: false }));
+    setCreatingCard(false);
   };
 
-  const addList = () => {
-    dispatch(setCreatingCard({ isCreatingCard: true }));
+  const addCard = () => {
+    setCreatingCard(true);
   };
 
   return (
-    <div className={styles.addCard}>
-      {creatingList ? (
+    <div className={styles.addCard} key={cardKey}>
+      {creatingCard ? (
         <div>
-          <Field defaultText="Enter Card Name" />
+          <Field defaultText="Enter Card Name" dispatchFunction="newCard" />
           <AddComponent
             string="Add New Card"
             clickButton={buttonClick}
@@ -49,7 +57,7 @@ export function AddCard() {
           />
         </div>
       ) : (
-        <div onClick={addList}>
+        <div onClick={addCard}>
           <span>+ Add a Card</span>
         </div>
       )}

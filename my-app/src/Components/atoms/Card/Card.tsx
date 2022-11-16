@@ -1,3 +1,5 @@
+import style from "./card.module.css";
+
 interface Props {
   title: string;
 }
@@ -5,7 +7,7 @@ interface Props {
 export function Card(props: Props) {
   const { title } = props;
   return (
-    <div>
+    <div className={style.card}>
       <span>{title}</span>
     </div>
   );
