@@ -1,12 +1,9 @@
-import { combineReducers } from '@reduxjs/toolkit'
+import { combineReducers } from "@reduxjs/toolkit";
 
-import {main_board_slice} from './features'
-
+import { main_board_slice } from "./features";
 
 export const rootReducer = combineReducers({
-    mainBoard: main_board_slice.reducer,
+  mainBoard: main_board_slice.reducer,
 });
 
-
-export type RootState = ReturnType<typeof rootReducer>
-
+export type RootState = ReturnType<typeof rootReducer>;

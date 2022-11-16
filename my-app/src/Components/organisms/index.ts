@@ -1,2 +1,2 @@
-export * from './AddList';
-export * from './AddCard';
+export * from "./AddList";
+export * from "./AddCard";

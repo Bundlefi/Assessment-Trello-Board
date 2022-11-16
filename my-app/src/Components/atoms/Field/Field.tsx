@@ -1,33 +1,30 @@
 import { useState } from "react";
-import {useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from "react-redux";
 import { setNewListName } from "../../../../Redux";
 
-interface Props{
-    defaultText:string
+interface Props {
+  defaultText: string;
 }
 
+export function Field(props: Props) {
+  const { defaultText } = props;
 
-export function Field(props:Props) {
-    const {defaultText} = props;
+  const [field, setField] = useState("");
+  const dispatch = useDispatch();
 
-    const [field, setField] = useState('');
-    const dispatch = useDispatch();
+  const handleChange = (e: string) => {
+    setField(e);
+    dispatch(setNewListName({ newListName: e }));
+  };
 
-    const handleChange = (e:string)=> {
-       
-        setField(e);
-        dispatch(setNewListName({newListName:e}));
-    }
-
-return(
+  return (
     <form>
-        <input
+      <input
         type="text"
-        value = {field}
-        placeholder = {defaultText}
-        onChange = {(e)=> handleChange(e.target.value)}
-        >
-        </input>
+        value={field}
+        placeholder={defaultText}
+        onChange={(e) => handleChange(e.target.value)}
+      ></input>
     </form>
-)
+  );
 }

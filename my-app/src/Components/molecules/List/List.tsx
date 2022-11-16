@@ -1,26 +1,21 @@
-import {Card, Field} from '../../atoms'
-import {AddComponent} from '../../molecules';
+import { Card, Field } from "../../atoms";
+import { AddComponent } from "../../molecules";
 
-
-interface Props{
-    title: string,
-    cards: string[]
+interface Props {
+  title: string;
+  cards: string[];
 }
 
+export function List(props: Props) {
+  const { title, cards } = props;
 
-
-
-export function List(props:Props){
-
-const {title, cards} = props;
-
-return(
+  return (
     <div>
-        <span>{title}</span>
-       
-    {cards.map(card => <Card key = {card} title={card}/>)}
-  
-    </div>
-)
+      <span>{title}</span>
 
+      {cards.map((card) => (
+        <Card key={card} title={card} />
+      ))}
+    </div>
+  );
 }
