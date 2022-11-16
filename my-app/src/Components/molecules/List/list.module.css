@@ -1,0 +1,13 @@
+.list {
+  width: 3em;
+  background-color: gray;
+  height: 90%;
+  width: 25%;
+  margin-right: 1em;
+}
+
+.listTitle {
+  height: 3em;
+  background-color: beige;
+  color: black;
+}

@@ -1,6 +1,7 @@
-.addListCard{
-    background-color: lightblue;
-    margin: 10px;
-    padding:5px;
-    width:12em
+.addListCard {
+  background-color: lightblue;
+  margin: 10px;
+  padding: 5px;
+  width: 12em;
+  height: 3em;
 }

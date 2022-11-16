@@ -30,7 +30,7 @@ interface SetNewCardPayload {
 
 const defineBoard = async () => {
   let board: [][] = (await JSON.parse(
-    localStorage.getItem("board") || "[[]]"
+    window.localStorage.getItem("board") || "[[]]"
   )) || [[]];
   if (board == [[]]) {
     await window.localStorage.setItem("board", JSON.stringify([[]]));
@@ -41,7 +41,7 @@ const defineBoard = async () => {
 
 const initialState: MainBoardState = {
   isCreatingList: false,
-  board: defineBoard(),
+  board: [[]],
   newListName: "",
   isCreatingCard: false,
   newCardName: "",
@@ -56,7 +56,7 @@ const MainBoardSlice = createSlice({
     },
     setBoard(state, { payload }: PayloadAction<CreateBoardPayload>) {
       state.board = payload.board;
-      localStorage.setItem("board", JSON.stringify(payload.board));
+      window.localStorage.setItem("board", JSON.stringify(payload.board));
     },
     setNewListName(state, { payload }: PayloadAction<SetNewListName>) {
       state.newListName = payload.newListName;

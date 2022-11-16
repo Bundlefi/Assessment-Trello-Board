@@ -7,7 +7,7 @@ import {
   getNewCardName,
   setCardNewName,
 } from "../../../../Redux";
-import styles from "../AddList/addList.module.css";
+import styles from "./addCard.module.css";
 
 export function AddCard() {
   const creatingList = useSelector(isCreatingCard);
@@ -38,7 +38,7 @@ export function AddCard() {
   };
 
   return (
-    <div className={styles.addListCard}>
+    <div className={styles.addCard}>
       {creatingList ? (
         <div>
           <Field defaultText="Enter Card Name" />
