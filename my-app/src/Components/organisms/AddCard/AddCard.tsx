@@ -7,7 +7,7 @@ import {
   getNewCardName,
   setCardNewName,
 } from "../../../../Redux";
-import styles from "./addList.module.css";
+import styles from "../AddList/addList.module.css";
 
 export function AddCard() {
   const creatingList = useSelector(isCreatingCard);
