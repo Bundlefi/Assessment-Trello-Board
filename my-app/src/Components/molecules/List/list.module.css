@@ -1,12 +1,13 @@
 .list {
   width: 3em;
   background-color: gray;
-  height: 90%;
-  width: 25%;
+  height: fit-content;
+  width: 15em;
   margin-right: 1em;
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-height: 50em;
 }
 
 .listTitle {
